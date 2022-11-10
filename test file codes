@@ -4,4 +4,4 @@ t = Tiff('USGS_13_n43w071_20220713.tif','r');
 imageData = read(t);
 
 imshow(imageData);
-```sh
+```
