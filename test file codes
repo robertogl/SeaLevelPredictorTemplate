@@ -1,10 +1,11 @@
 # Tried reading and displating the TIFF
 
-    t = Tiff('USGS_13_n43w071_20220713.tif','r');
-    imageData = read(t);
-    imshow(imageData);
 
-It seemed to work out. Here is the TIFF image displayed:
-https://github.com/beasicilia/SeaLevelPredictor/issues/1
+```
+t = Tiff('USGS_13_n43w071_20220713.tif','r');
+imageData = read(t);
+imshow(imageData);
+```
+It seemed to work out. Here is the TIFF image displayed: [MAPn43w071](https://github.com/beasicilia/SeaLevelPredictor/issues/1)
 
 
