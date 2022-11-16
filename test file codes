@@ -1,11 +1,37 @@
-# Tried reading and displating the TIFF
+%% n43w071
+t1 = Tiff('USGS_13_n43w071_20220713.tif','r');
+imageData1 = read(t1);
+
+maxNum1 = matmax(imageData1);
+
+figure
+imshow(imageData1, [-2 maxNum1]);
 
 
-```
-t = Tiff('USGS_13_n43w071_20220713.tif','r');
-imageData = read(t);
-imshow(imageData);
-```
-It seemed to work out. Here is the TIFF image displayed: [MAPn43w071](https://github.com/beasicilia/SeaLevelPredictor/issues/1)
+%% n43w072
+t2 = Tiff('USGS_13_n42w071_20191216.tif','r');
+imageData2 = read(t2);
+
+maxNum2 = matmax(imageData2);
+
+figure
+imshow(imageData2, [-2 maxNum2]);
+
+%% Concatenate Matrices
+combineData = [imageData1; imageData2];
+figure
+imshow(combineData, [-2 maxNum2]);
 
 
+
+%% Functions
+
+function maxNum = matmax(matrix)
+    maxarr = max(matrix);
+    maxNum = max(maxarr);
+end
+
+function minNum = matmin(matrix)
+    minarr = min(matrix);
+    minNum = min(minarr);
+end
