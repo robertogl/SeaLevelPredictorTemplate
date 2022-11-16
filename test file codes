@@ -1,19 +1,14 @@
 %% n43w071
 t1 = Tiff('USGS_13_n43w071_20220713.tif','r');
 imageData1 = read(t1);
-
 maxNum1 = matmax(imageData1);
-
 figure
 imshow(imageData1, [-2 maxNum1]);
-
 
 %% n43w072
 t2 = Tiff('USGS_13_n42w071_20191216.tif','r');
 imageData2 = read(t2);
-
 maxNum2 = matmax(imageData2);
-
 figure
 imshow(imageData2, [-2 maxNum2]);
 
