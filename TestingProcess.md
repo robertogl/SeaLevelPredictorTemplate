@@ -75,6 +75,8 @@ Result:
 #THUR 11/17/2022
 
 ### This code reads data in .laz format and represents a map
+
+```
 path = fullfile("18TWK670925.laz");
 lasReader = lasFileReader(path);
 ptCloud = readPointCloud(lasReader);
@@ -83,6 +85,8 @@ figure
 pcshow(ptCloud.Location)
 colorbar
 clim([0 10])
+
+```
 
 Result: 
 ![image](https://user-images.githubusercontent.com/113383808/202563308-114ac2e7-1fe7-40e2-a86c-74ab85318378.png)
