@@ -39,6 +39,7 @@ maxNum1 = matmax(imageData1);
 
 figure
 imshow(imageData1, [-2 maxNum1]);
+colorbar
 
 %% n43w072
 t2 = Tiff('USGS_13_n42w071_20191216.tif','r');
@@ -47,11 +48,13 @@ maxNum2 = matmax(imageData2);
 
 figure
 imshow(imageData2, [-2 maxNum2]);
+colorbar
 
 %% Concatenate Matrices
 combineData = [imageData1; imageData2];
 figure
 imshow(combineData, [-2 maxNum2]);
+colorbar
 
 
 %% Functions
