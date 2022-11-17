@@ -72,7 +72,7 @@ Result:
 <img src="https://user-images.githubusercontent.com/86635895/202557240-1b2f3184-baca-4b4b-a1c1-040bf1fcba59.png" width="350" height="600" />
 
 
-#THUR 11/17/2022
+# THUR 11/17/2022
 
 ### This code reads data in .laz format and represents a map
 
