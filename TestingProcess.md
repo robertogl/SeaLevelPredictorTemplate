@@ -84,5 +84,6 @@ pcshow(ptCloud.Location)
 colorbar
 clim([0 10])
 
+Result: 
 ![image](https://user-images.githubusercontent.com/113383808/202563308-114ac2e7-1fe7-40e2-a86c-74ab85318378.png)
 
