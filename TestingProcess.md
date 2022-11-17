@@ -91,6 +91,6 @@ clim([0 10])
 Result: 
 
 
-<img src="https://user-images.githubusercontent.com/113383808/202563308-114ac2e7-1fe7-40e2-a86c-74ab85318378.png" width="600" height="600" />
+<img src="https://user-images.githubusercontent.com/113383808/202563308-114ac2e7-1fe7-40e2-a86c-74ab85318378.png" width="600" height="500" />
 
 
