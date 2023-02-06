@@ -9,7 +9,7 @@ geoshow(A,R,"DisplayType","surface")
 demcmap(A)
 ```
 Result:
-Units: degree, meter
+Units: degree, meter <br />
 <img src="https://user-images.githubusercontent.com/86635895/217102375-cefd937b-8202-444d-bfa6-e1ad6529ba4f.png" width="300" height="300" />
 <img src="https://user-images.githubusercontent.com/86635895/217102909-debe4311-1450-456e-9bc7-d29985726ca8.png" width="500" height="250" />
 <img src="https://user-images.githubusercontent.com/86635895/217103149-4ac0afe5-ac17-49db-b8f2-5ebc93b60963.png" width="500" height="250" />
