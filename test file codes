@@ -1,32 +1,26 @@
-%% n43w071
-t1 = Tiff('USGS_13_n43w071_20220713.tif','r');
-imageData1 = read(t1);
-maxNum1 = matmax(imageData1);
-figure
-imshow(imageData1, [-2 maxNum1]);
+[A,R] = readgeoraster("USGS_13_n42w071_20230117.tif","OutputType","double");
+latlim = R.LatitudeLimits;
+lonlim = R.LongitudeLimits;
+%usamap(latlim,lonlim)
+%geoshow(A,R,"DisplayType","surface")
+%demcmap(A)
 
-%% n43w072
-t2 = Tiff('USGS_13_n42w071_20191216.tif','r');
-imageData2 = read(t2);
-maxNum2 = matmax(imageData2);
-figure
-imshow(imageData2, [-2 maxNum2]);
+% Creating latitude (vertical) and longitude (horisontal) vectors
+latiVec = zeros(R.RasterSize(1), 1);
+longVec = zeros(1, R.RasterSize(2));
 
-%% Concatenate Matrices
-combineData = [imageData1; imageData2];
-figure
-imshow(combineData, [-2 maxNum2]);
+latiUnit = (abs(latlim(1) - latlim(2)))/R.RasterSize(1);
+longUnit = (abs(lonlim(1) - lonlim(2)))/R.RasterSize(2);
 
-
-
-%% Functions
-
-function maxNum = matmax(matrix)
-    maxarr = max(matrix);
-    maxNum = max(maxarr);
+% inputing values for latitude vector
+for i = 1:R.RasterSize(1)
+    latiVec(i,1) = latlim(1) + (latiUnit * (i-1));
 end
 
-function minNum = matmin(matrix)
-    minarr = min(matrix);
-    minNum = min(minarr);
+% inputing values for longitude vector
+for j = 1:R.RasterSize(2)
+    longVec(1,j) = lonlim(1) + (longUnit * (j-1));
 end
+
+
+
