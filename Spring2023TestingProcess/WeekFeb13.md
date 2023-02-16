@@ -32,8 +32,11 @@ geoshow(lat,lon,DisplayType="point",Marker="pentagram")
 title("Boston")
 subtitle("Basemap")
 
-
+# Thurs 02/16/2023
+### Display Basemap of Miami
+```
 % Code for Basemap of Miami (zoomed out)
+
 %Use latitude and longitude limits from elevation data
 [~,R] = readgeoraster("USGS_13_n26w081_20221103.tif","OutputType","double");
 latlim1 = R.LatitudeLimits;
