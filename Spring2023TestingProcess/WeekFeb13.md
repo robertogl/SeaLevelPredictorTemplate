@@ -32,6 +32,7 @@ geoshow(lat,lon,DisplayType="point",Marker="pentagram")
 title("Boston")
 subtitle("Basemap")
 
+
 # Thurs 02/16/2023
 ### Display Basemap of Miami
 ```
