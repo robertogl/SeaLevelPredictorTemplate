@@ -1,7 +1,7 @@
+# Tues 02/14/2023
+### Display Basemap of Boston
+```
 % Code for Basemap of Boston (zoomed out)
-
-%Reading long, lat coordinates from a text file
-%[lat,lon] = readvars("european_capitals.txt"); -- don't think we need this
 
 %Use latitude and longitude limits from elevation data
 [~,R] = readgeoraster("USGS_13_n43w071_20220713.tif","OutputType","double");
