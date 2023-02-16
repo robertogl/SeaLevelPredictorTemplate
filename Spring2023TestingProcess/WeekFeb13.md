@@ -46,6 +46,6 @@ h = worldmap(latlim,lonlim);
 getm(h,"mapprojection")
 geoshow(latGrid,lonGrid,A)
 geoshow(lat,lon,DisplayType="point",Marker="pentagram")
-title("Boston")
+title("Miami")
 subtitle("Basemap")
 ```
