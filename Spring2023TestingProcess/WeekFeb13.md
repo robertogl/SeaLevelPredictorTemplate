@@ -6,8 +6,8 @@
 latlim1 = R.LatitudeLimits;
 lonlim1 = R.LongitudeLimits;
 
-latlim = [24,28];
-lonlim = [-82,-78];
+latlim = [41,43];
+lonlim = [-72, -69];
 
 [A,RA] = readBasemapImage("colorterrain",latlim,lonlim,25);
 
