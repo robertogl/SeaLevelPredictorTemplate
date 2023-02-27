@@ -1,3 +1,21 @@
+# Mon 02/13/2023
+### Compress lines of code into functions
+Started to make code for analysing a TIF file into a function: 
+Inputs:  <br />
+- The TIF file
+Outputs:  <br />
+- Map display (currently)
+- Elevation value matrix (expect)
+- Geo-coordinate verctors (expect)
+
+Added/Changed to the code:
+```
+function [] = elevationWgeocoordinates(tiffile)
+    [A,R] = readgeoraster(tiffile,"OutputType","double");
+...
+end
+```
+
 # Tues 02/14/2023
 ### Display Basemap of Boston
 ```
