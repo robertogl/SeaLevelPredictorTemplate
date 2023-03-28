@@ -43,3 +43,33 @@ title("New Coastline of Florida - (Elevation - 1.99876)")
 
 end 
 ```
+
+```
+P = readtable('SLR_TF U.S. Sea Level Projections.csv');
+
+%create new matrix C that only contains columns of P that have the data 
+C = P(:, 14:28);
+C(1:12, :) = [];
+
+%create new matrix that only contains the two columns of the lat lon
+L = P(:, 6:7);
+L(1:27,:) = [];
+
+
+%call elevation function to get lat lon vectors to use here  
+[latitude, longitude] = elevation("USGS_13_n26w_081_20221103.tif");
+
+
+%index L matrix first column to match latiVec & longVec from elevation
+[rowsL,columnsL] = size(L);
+for i = 1:rowsL
+    for j = 1:columnsL
+        if L(i,j) == latiVec(i,:)
+            N 
+        end 
+        if L(i,j) == longVec(i,:)
+
+        end 
+    end 
+end 
+```
