@@ -46,7 +46,7 @@ end
 
 ### Prediction data code (start)
 ```
-P = readtable('SLR_TF U.S. Sea Level Projections.csv');
+P = readtable("SLR_TF U.S. Sea Level Projections.csv");
 
 %create new matrix C that only contains columns of P that have the data 
 C = P(:, 14:28);
@@ -58,19 +58,27 @@ L(1:27,:) = [];
 
 
 %call elevation function to get lat lon vectors to use here  
-[latitude, longitude] = elevation("USGS_13_n26w_081_20221103.tif");
+[latitude, longitude] = elevationData("USGS_13_n26w081_20221103.tif");
 
 
 %index L matrix first column to match latiVec & longVec from elevation
 [rowsL,columnsL] = size(L);
-for i = 1:rowsL
-    for j = 1:columnsL
-        if L(i,j) == latiVec(i,:)
-            N 
-        end 
-        if L(i,j) == longVec(i,:)
 
-        end 
-    end 
-end 
+newLatindex = zeros();
+newLonindex = zeros();
+
+%index into latitude colomn
+for i = 1:rowsL
+    if (L(i,1) > latlim1(1)) && (L(i,1) < latlim1(2))
+        newLatindex(1) = i;
+    end
+end
+
+for j = 1:rowsL
+    if (L(j,2) > lonlim1(1)) && (L(j,2) < lonlim1(2))
+        newLonindex(1) = j;
+    end
+end
+
+
 ```
