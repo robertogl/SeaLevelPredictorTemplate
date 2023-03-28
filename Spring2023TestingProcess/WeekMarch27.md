@@ -1,4 +1,7 @@
+# Tuesday 03/20823
+### Elevation code as a function
 
+```
 function [latiVec, longVec] = elevation(in)
 
 [A,R] = readgeoraster(in,"OutputType","single");
@@ -39,3 +42,4 @@ colorbar
 title("New Coastline of Florida - (Elevation - 1.99876)")
 
 end 
+```
