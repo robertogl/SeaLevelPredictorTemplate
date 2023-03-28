@@ -44,7 +44,6 @@ title("New Coastline of Florida - (Elevation - 1.99876)")
 end 
 ```
 
-# Tuesday 03/28/23
 ### Prediction data code (start)
 ```
 P = readtable('SLR_TF U.S. Sea Level Projections.csv');
