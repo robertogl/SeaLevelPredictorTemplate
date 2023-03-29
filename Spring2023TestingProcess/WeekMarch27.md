@@ -112,8 +112,7 @@ function [] = finalFunction()
         last = length(newLatindex);
         lastLon = length(newLonindex);
 
-%       NewMatrix = P(newLatindex(1):newLatindex(last), c);
-%       NewMatrix2 = P(newLonindex(1):newLonindex(lastLon), c);
+        [columnsL, P] = predictionData("PredictionData.csv");
 
         for c = 1: columnsL
             if year == c
@@ -123,11 +122,12 @@ function [] = finalFunction()
         end 
 
 %creating the final output map of the elevation minus the new matrix of data
+        [A,R] = elevationData("TitusvilleFlorida.tif");
         figure
-        C = (A - ([NewMatrix2 NewMatrix]));
+        Final = (A - ([NewMatrix2 NewMatrix]));
         usamap(latlim1,lonlim1)
-        geoshow(C,R,"DisplayType","texturemap")
-        demcmap(C)
+        geoshow(Final,R,"DisplayType","texturemap")
+        demcmap(Final)
         colorbar
         title("Coastline of Titusville, Florida in year ", year)
 
