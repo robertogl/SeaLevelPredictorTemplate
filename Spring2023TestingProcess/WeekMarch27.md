@@ -114,8 +114,11 @@ function [] = finalFunction()
 
         [columnsL, P] = predictionData("PredictionData.csv");
 
+       % need help with this for loop (matrix vs. table dilemma) and
+       % extracting the single column depending on what year the user wants
+       % to see
         for c = 1: columnsL
-            if year == c
+            if year == "RSL2050"
                 NewMatrix = P(newLatindex(1):newLatindex(last), c);
                 NewMatrix2 = P(newLonindex(1):newLonindex(lastLon), c);            
             end
@@ -132,8 +135,8 @@ function [] = finalFunction()
         title("Coastline of Titusville, Florida in year ", year)
 
  
-%     elseif city == "Titusville.tif"
-%         elevationData("TitusvilleFlorida.tif");
+%     elseif city == "Boston"
+%         elevationData("Boston.tif");
 %         predictionData("PredictionData.csv");
 %          
 %     elseif city == "San Francisco"
