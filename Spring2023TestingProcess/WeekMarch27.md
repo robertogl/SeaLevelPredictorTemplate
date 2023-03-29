@@ -149,3 +149,48 @@ function [] = finalFunction()
 
 end 
 ```
+
+### Prediction Data Function
+```
+function [newLatindex, newLonindex] = predictionData(dataIn)
+
+P = readmatrix(dataIn);
+
+%create new matrix C that only contains columns of P that have the data 
+C = P(:, 14:28);
+C(1:12, :) = [];
+
+%create new matrix that only contains the two columns of the lat lon
+L = P(:, 6:7);
+L(1:27,:) = [];
+
+
+%call elevation function to get lat lon vectors to use here  
+[latlim1, lonlim1] = elevationData("TitusvilleFlorida.tif");
+
+
+%index L matrix first column to match latiVec & longVec from elevation
+[rowsL, columnsL] = size(L);
+
+newLatindex = zeros();
+newLonindex = zeros();
+
+%index into latitude colomn
+z = 1;
+for i = 1:rowsL
+    if (L(i,1) >= latlim1(1)) && (L(i,1) <= latlim1(2))
+        newLatindex(z) = i;
+        z = z+1;
+    end 
+end
+
+%index into longitude column
+a = 1;
+for j = 1:rowsL
+    if (L(j,2) >= lonlim1(1)) && (L(j,2) <= lonlim1(2))
+        newLonindex(a) = j;
+        a = a+1;
+    end
+end
+end
+```
