@@ -118,7 +118,7 @@ function [] = finalFunction()
        % extracting the single column depending on what year the user wants
        % to see
         for c = 1: columnsL
-            if year == "RSL2050"
+            if P(:,c) == year
                 NewMatrix = P(newLatindex(1):newLatindex(last), c);
                 NewMatrix2 = P(newLonindex(1):newLonindex(lastLon), c);            
             end
