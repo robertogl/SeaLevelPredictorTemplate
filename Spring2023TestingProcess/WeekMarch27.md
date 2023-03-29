@@ -96,25 +96,42 @@ end
 ```
 function [] = finalFunction()
 
+%user input to get which city to run the code for 
     prompt = "Choose which city you would like to view the new coastline for: Boston, Titusville, San Francisco, or New Orleans - ";
     city = input(prompt, "s");
 
+%user input to get which year to output new coastline for 
     prompt = "What year would you like to see the new coastline for: " ;
     year = str2double(input(prompt, "s"));
 
-    if city == "Boston"
-        elevationData("Boston.tif");
-        predictionData("PredictionData.csv", year);
+%pulling the data for which city the user chose and creating the new matrix of that corresponding data for that region
+    if city == "Titusville"
+        [latlim1, lonlim1] = elevationData("TitusvilleFlorida.tif");
+        [newLatindex, newLonindex] = predictionData("PredictionData.csv");
        
-        
+        last = length(newLatindex);
+        lastLon = length(newLonindex);
+
+%       NewMatrix = P(newLatindex(1):newLatindex(last), c);
+%       NewMatrix2 = P(newLonindex(1):newLonindex(lastLon), c);
+
+        for c = 1: columnsL
+            if year == c
+                NewMatrix = P(newLatindex(1):newLatindex(last), c);
+                NewMatrix2 = P(newLonindex(1):newLonindex(lastLon), c);            
+            end
+        end 
+
+%creating the final output map of the elevation minus the new matrix of data
         figure
-        C = (A - N);
+        C = (A - ([NewMatrix2 NewMatrix]));
         usamap(latlim1,lonlim1)
         geoshow(C,R,"DisplayType","texturemap")
         demcmap(C)
         colorbar
-        title("Coastline of Boston in year ", year)
+        title("Coastline of Titusville, Florida in year ", year)
 
+ 
 %     elseif city == "Titusville.tif"
 %         elevationData("TitusvilleFlorida.tif");
 %         predictionData("PredictionData.csv");
