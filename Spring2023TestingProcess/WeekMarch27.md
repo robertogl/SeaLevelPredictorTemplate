@@ -194,3 +194,38 @@ for j = 1:rowsL
 end
 end
 ```
+
+### Elevation Data Function
+```
+function [latiVec, longVec] = elevationData(in)
+
+[A,R] = readgeoraster(in,"OutputType","single");
+latlim1 = R.LatitudeLimits;
+lonlim1 = R.LongitudeLimits;
+
+% figure;
+% usamap(latlim1,lonlim1);
+% geoshow(A,R,"DisplayType","texturemap");
+% demcmap(A);
+% colorbar;
+% title("Elevation Data of Florida");
+
+% Creating latitude (vertical) and longitude (horizontal) vectors
+latiVec = zeros(R.RasterSize(1), 1);
+longVec = zeros(1, R.RasterSize(2));
+
+latiUnit = (abs(latlim1(1) - latlim1(2)))/R.RasterSize(1);
+longUnit = (abs(lonlim1(1) - lonlim1(2)))/R.RasterSize(2);
+
+% inputing values for latitude vector
+for i = 1:R.RasterSize(1)
+    latiVec(i,1) = latlim1(1) + (latiUnit * (i-1));
+end
+
+% inputing values for longitude vector
+for j = 1:R.RasterSize(2)
+    longVec(j,1) = lonlim1(1) + (longUnit * (j-1));
+end
+
+end 
+```
