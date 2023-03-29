@@ -89,3 +89,43 @@ end
 end
 
 ```
+
+# Wednesday 03/29/23
+### Start of final function code 
+
+```
+function [] = finalFunction()
+
+    prompt = "Choose which city you would like to view the new coastline for: Boston, Titusville, San Francisco, or New Orleans - ";
+    city = input(prompt, "s");
+
+    prompt = "What year would you like to see the new coastline for: " ;
+    year = str2double(input(prompt, "s"));
+
+    if city == "Boston"
+        elevationData("Boston.tif");
+        predictionData("PredictionData.csv", year);
+       
+        
+        figure
+        C = (A - N);
+        usamap(latlim1,lonlim1)
+        geoshow(C,R,"DisplayType","texturemap")
+        demcmap(C)
+        colorbar
+        title("Coastline of Boston in year ", year)
+
+%     elseif city == "Titusville.tif"
+%         elevationData("TitusvilleFlorida.tif");
+%         predictionData("PredictionData.csv");
+%          
+%     elseif city == "San Francisco"
+%         elevationData("SanFrancisco.tif");
+%         predictionData("PredictionData.csv");
+%     elseif city == "New Orleans"
+%         elevationData("NewOrleans.tif");
+%         predictionData("PredictionData.csv");
+    end 
+
+end 
+```
