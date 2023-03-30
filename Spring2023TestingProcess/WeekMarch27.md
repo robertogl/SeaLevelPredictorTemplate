@@ -239,7 +239,7 @@ predictTable = readtable('SLR_TF U.S. Sea Level Projections.csv', 'NumHeaderLine
 ```
 Relevent links:
 https://www.mathworks.com/matlabcentral/answers/593539-problem-to-read-csv-file-with-a-blank-line
-https://www.mathworks.com/help/matlab/ref/readtable.html#bvghccx
+https://www.mathworks.com/help/matlab/ref/readtable.html#bvghccx <br />
 Answer that worked: https://www.mathworks.com/matlabcentral/answers/1705655-reading-csv-file-with-header-and-other-data
 
 
