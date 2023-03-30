@@ -263,18 +263,44 @@ for headerIndex = 1:hearderSize(2)
     end
 end
 ```
-Relevant links:<br />
-https://www.mathworks.com/matlabcentral/answers/175423-how-to-extract-column-name-of-table-in-matlab
-https://www.mathworks.com/help/rptgen/ug/mlreportgen.dom.tableheader-class.html
+Relevant links:
+<br />https://www.mathworks.com/matlabcentral/answers/175423-how-to-extract-column-name-of-table-in-matlab
+<br />https://www.mathworks.com/help/rptgen/ug/mlreportgen.dom.tableheader-class.html
 
-Links mostly used:<br />
-https://www.mathworks.com/matlabcentral/answers/323773-how-to-find-strings-of-certain-format-within-text-file, https://www.mathworks.com/help/matlab/ref/regexp.html
-https://www.mathworks.com/matlabcentral/answers/175423-how-to-extract-column-name-of-table-in-matlab
-https://www.mathworks.com/help/matlab/matlab_prog/access-data-in-a-cell-array.html
+Links mostly used:
+<br />https://www.mathworks.com/matlabcentral/answers/323773-how-to-find-strings-of-certain-format-within-text-file
+<br />https://www.mathworks.com/help/matlab/ref/regexp.html
+<br />https://www.mathworks.com/matlabcentral/answers/175423-how-to-extract-column-name-of-table-in-matlab
+<br />https://www.mathworks.com/help/matlab/matlab_prog/access-data-in-a-cell-array.html
 
 ### Changing the prediction data table header (Renaming the identified headers)
-https://www.mathworks.com/help/matlab/ref/table.renamevars.html
-https://www.mathworks.com/matlabcentral/answers/422683-extracting-numbers-from-mixed-string
+
+To extract the year value from the RSL'year'_cm_ format:
+the cellarr variable is just to index into the headersNames variable.
+```
+sscanf(cellarr{1},'RSL%d_cm_')
+```
+We identified the headers to rename by the column number (yearIndex), extracted the year values using the code above, made them into a new names vector, and renamed the headers.
+```
+% creating names for the years
+yearVec = headersNames(yearIndex);
+newNameVec = [];
+newNameVecIn = 1;
+for var1 = 1:width(yearVec)
+    cellarr2 = yearVec(var1);
+    newNameVec(newNameVecIn) = sscanf(cellarr2{1},'RSL%d_cm_');
+    newNameVecIn = newNameVecIn + 1;
+end
+
+% renaming the years with newName
+newPTable = renamevars(predictTable,yearIndex,string(newNameVec));
+```
+
+Links mostly used:
+<br />https://www.mathworks.com/matlabcentral/answers/422683-extracting-numbers-from-mixed-string
+<br />https://www.mathworks.com/help/matlab/ref/sscanf.html
+<br />https://www.mathworks.com/help/matlab/ref/table.renamevars.html
+<br />https://www.mathworks.com/help/matlab/ref/string.html
 
 
 
