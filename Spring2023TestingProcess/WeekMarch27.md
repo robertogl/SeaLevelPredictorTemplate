@@ -255,7 +255,47 @@ Relevant links:
 <br />
 
 
+### Updated final function
+```
+function [] = finalFunction()
 
+%user input to get which city to run the code for 
+    prompt = "Choose which city you would like to view the new coastline for (Newport): ";
+    city = input(prompt, "s");
+
+%user input to get which year to output new coastline for 
+    prompt = "What year would you like to see the new coastline for: " ;
+    wantedYear = str2double(input(prompt, "s"));
+
+%pulling the data for which city the user chose and creating the new matrix of corresponding data
+    if city == "Newport"
+        [latlim1, lonlim1, latiVec, longVec, A, R] = elevationData("Newport.tif");
+        [newLatindex, newLonindex, columnsC, Pdata, L] = predictionData("PredictionData.csv");
+       
+%matching columns of the data matrix to the correct data rows for that year
+%[columnsL, C] = predictionData("PredictionData.csv");   
+    last = length(newLatindex);
+    lastLon = length(newLonindex);
+    for year = 1:columnsC
+        if Pdata(:,year) == wantedYear
+                data = Pdata(newLatindex(1):newLatindex(last), c);
+                data2 = Pdata(newLonindex(1):newLonindex(lastLon), c);            
+        end
+    end 
+
+%creating the final output map of the elevation minus the new matrix of data
+%[A,R] = elevationData("Honolulu1.tif");
+        figure
+        Final = (A - ([data data2]));
+        usamap(latlim1,lonlim1)
+        geoshow(Final,R,"DisplayType","texturemap")
+        demcmap(Final)
+        colorbar
+        title("Coastline of Newport, RI in year ", wantedYear)
+        
+    end  
+end 
+```
 
 
 
