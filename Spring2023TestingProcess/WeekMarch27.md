@@ -255,6 +255,71 @@ Relevant links:
 <br />
 
 
+### Updated prediction data function 
+
+```
+function [newLatindex, newLonindex, columnsC, Pdata, L] = predictionData(dataIn)
+
+predictTable = readtable(dataIn, 'NumHeaderLines', 17);
+
+% %create new matrix C that only contains columns of P that have the data 
+C = predictTable(:, 14:28);
+
+[~, columnsC] = size(C);
+    
+Pdata = renamevars(C, ["RSL2005_cm_", "RSL2020_cm_", "RSL2030_cm_", "RSL2040_cm_", ...
+    "RSL2050_cm_", "RSL2060_cm_", "RSL2070_cm_", "RSL2080_cm_", "RSL2090_cm_", ...
+    "RSL2100_cm_", "RSL2110_cm_", "RSL2120_cm_", "RSL2130_cm_", "RSL2140_cm_", ...
+    "RSL2150_cm_"], [2005, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, ...
+    2100, 2110, 2120, 2130, 2140, 2150]);
+
+%create new matrix that only contains the two columns of the lat lon
+L = predictTable(:, 6:7);
+L(1:15,:) = [];
+
+
+%call elevation function to get lat lon vectors to use here  
+% [latlim1, lonlim1, latiVec, longVec] = elevationData("Newport.tif");
+N = zeros(size(L));
+
+%index L matrix first column to match latiVec & longVec from elevation
+[rowsL,columnsL] = size(N);
+
+% latitude - 1st colomn
+for x = 1:rowsL 
+    N(x,1) = L.('Lat')(x);
+end
+
+% longitude - 2nd colomn
+for y = 1:rowsL
+    N(y,2) = L.('Long')(y);
+end
+
+newLatindex = zeros();
+newLonindex = zeros();
+
+%index into latitude colomn
+a = 1;
+for i = 1:rowsL
+    if (N(i,1) >= latlim1(1)) && (N(i,1) <= latlim1(2))
+        newLatindex(a) = i;
+        a = a+1;
+    end
+end
+
+b = 1;
+for j = 1:rowsL
+    if (N(j,2) >= lonlim1(1)) && (N(j,2) <= lonlim1(2))
+        newLonindex(b) = j;
+        b = b+1;
+    end
+end
+
+predictionIndex = intersect(newLonindex,newLatindex);
+
+end
+```
+
 ### Updated final function
 ```
 function [] = finalFunction()
