@@ -233,7 +233,7 @@ end
 # Thursday 03/30/23
 ### Start of final function code
 
-We were getting errors in the prediction data outputs, so I checked table P. I realized that table P was not being read correctly. The prediction data file had a lot of blank cells in the first few rows as they were used for explinations and citations. For now, we are hard coding MatLab to start reading the .csv file at line 18 using this line of code:
+We were getting errors in the prediction data values we wanted, so I checked table P. I realized that table P was not being read correctly. The prediction data file had a lot of blank cells in the first few rows as they were used for explinations and citations. For now, we are hard coding MatLab to start reading the .csv file at line 18, so that we have the correct headers, using this line of code:
 ```
 predictTable = readtable('SLR_TF U.S. Sea Level Projections.csv', 'NumHeaderLines', 17);
 ```
