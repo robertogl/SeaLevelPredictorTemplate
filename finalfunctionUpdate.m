@@ -1,4 +1,4 @@
-'''
+
 function [] = finalFunction()
 
     %user input to get which city to run the code for 
@@ -58,4 +58,4 @@ function [] = finalFunction()
 %         title("Coastline of Newport, RI in year ", wantedYear) 
      end 
 end 
-'''
+
