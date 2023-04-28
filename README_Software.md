@@ -18,5 +18,7 @@ The code files you will need to import into your MatLab window are of the follow
 8. dispelev.m
 
 Once these are all open in your MatLab window, the only file you will need to run in order to see the final output maps of the two figures (original elevation data & predicted new coastline) is the script named "finalFunction.m". 
+
 Once you run this script, there will be three prompts that you will need to answer in order to run the script. The three prompts are: "Choose which city you would like to view the new coastline for: " , "Choose which scenario you would like to view the new coastline for: " , and "Choose which year you would like to view the new coastline for: ". 
+
 Once the prompts are answered by pressing the enter key, wait for the two figures to show up on your screen. The figure named "Elevation Data" is of the original elevatoin data in the present day. The figure named "Prediction Data" is of the new predicted coastline for the year chosen. 
