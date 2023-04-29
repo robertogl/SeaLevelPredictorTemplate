@@ -3,7 +3,8 @@
 
 MATLAB Software - $0 OR $100 maximum 
 (there are other packages for $20, $30, $40, etc.)
-    - if you have a license through an institution. Without a license given by an institution, the version you will need if MATLAB_R2022b or newer.
+    
+    - if you have a license through an institution. Without a license given by an institution, the version you will need is MATLAB_R2022b or newer.
     
 Elevation Data Files & Data Server - $0
 
