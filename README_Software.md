@@ -28,12 +28,12 @@ Once the prompts are answered by pressing the enter key, wait for the two figure
 
 Region.m file: 
 
-This script's main purpose is to define the function called 'readelevation'. 
+- This script's main purpose is to define the function called 'readelevation'. 
 
 
 rangeparse.m file: 
 
-This function's main purpose is to 
+- This function's main purpose is to 
 
 fetchregion.m file: 
 
@@ -45,7 +45,7 @@ dispelev.m file:
 
 predictionTable.m file: 
 
-This function's main purpose is to import the prediction data file and extract the data needed for the final function. First, the function reads the data into a table 
+- This function's main purpose is to import the prediction data file and extract the data needed for the final function. First, the function reads the data into a table 
 
 
 elevationDataFunction.m file: 
@@ -53,8 +53,7 @@ elevationDataFunction.m file:
 
 finalFunction.m file: 
 
-The final function script is where the three user prompts are set up and stores the user input as three variables named 'wantedRegion', 'wantedYear' and 'wantedScenario'. 
-Then, the script calls the 'predictionTable' function to get the data and stores it in the variable called 'newPTable'. 
+- The final function script is where the three user prompts are set up and stores the user input as three variables named 'wantedRegion', 'wantedYear' and 'wantedScenario'. Then, the script calls the 'predictionTable' function to get the data and stores it in the variable called 'newPTable'. 
 
 
 
