@@ -13,11 +13,11 @@ This project is a completed version of Project 229 - "Coastline Prediction using
 
 The purpose of this project is to give communities a resource that they can use to predict when their homes and communities will be affected by increasing sea levels around the US coasts. 
 
-## Things to look out for
+### Things to look out for
 
 The elevation data files do not work for certain regions around the US that have military bases close by. This means that the file will still be downloadable and can be used with the code, but the output map will be very blurry and pixelated. Hard to use for coastline prediction if it is not detailed and specific. 
 
-## Current State of Project 
+### Current State of Project 
 
 
 
