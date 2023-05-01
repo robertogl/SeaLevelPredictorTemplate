@@ -5,6 +5,7 @@ The elevation data is sources from the United States Geological Survey (USGS).
     https://www.usgs.gov/special-topics/significant-topographic-changes-in-the-united-states/science/1x1-degree-tiles
 
 The sea level rise prediction data is sources from the National Oceanic and Atmospheric Administration (NOAA).
+  (https://oceanservice.noaa.gov/hazards/sealevelrise/sealevelrise-data.html)
   - The data file in .csv format.
   - The file contains predictions of different specific regions for up to the year 2150.
   - The file includes of those regions:
