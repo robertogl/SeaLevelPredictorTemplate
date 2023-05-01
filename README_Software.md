@@ -117,6 +117,6 @@ Analysis of Data
 #### 8. *dispelev.m* - Function file: 
 
 - This file is from the open source MatLab code “terrain-elevation” posted by “spfrommer” on GitHub.
-- This function's main purpose is to graph the elevation data ......
+- This function's main purpose is to graph the elevation data.
 
 
