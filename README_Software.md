@@ -17,7 +17,7 @@ The code files that should be imported into MatLab are of the following:
 7. ElevationData.m
 8. dispelev.m
 
-Note: Files #4, #5, #6, #7, #8 are referenced from the open source MatLab code “terrain-elevation” posted by “spfrommer” on GitHub.
+Note: Files #4, #5, #6, #7, #8 are referenced from the open source MatLab code “terrain-elevation” posted by “spfrommer” on GitHub. These function files are called in *elevationDataFunction.m* function file, and within each other, to output the tailored elevation matrix of the desired region specifically. The *fetchregion.m* function files downloads the elevation data files from an Amazon Web Service (AWS) cloud posted by the United States Geographical Survey (USGS). 
 https://github.com/spfrommer/terrain-elevation
 
 
