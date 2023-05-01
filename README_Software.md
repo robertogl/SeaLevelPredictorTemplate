@@ -58,15 +58,17 @@ Analysis of Data
   7. The script subtracts the whole *'regionMat'* matrix by the *'seaLevelRise'* value to create the predicted elevation matrix named *'predictedCoastline'*.
   8. The script displays the predicted map based on the elevation matrix *'predictedCoastline'* and the information matrix *'R'*.
 
+
 #### *predictionTable.m* - Function file: 
 
-- This function's main purpose is to import the prediction data file and extract the data needed for the final function. First, the function reads the data into a table 
-
+- This function's main purpose is to import the prediction data file and extract the data needed for the final function.
+1. The function reads the _.csv_ data file into a table starting at line 17.
+     - This is to exclude the notes and explinations in the first few rows of the file.
+     - Those notes and explinations are useful for better understanding the file, but pose problems when the file is used.
+2. The function renames the 'year' headers from _"RSL[year]_cm_"_ to just the [year] numbers.
 
 
 #### *elevationDataFunction.m* - Function file: 
-
-
 
 
 #### *Region.m* - Function file: 
