@@ -58,7 +58,6 @@ Analysis of Data
   7. The script subtracts the whole *'regionMat'* matrix by the *'seaLevelRise'* value to create the predicted elevation matrix named *'predictedCoastline'*.
   8. The script displays the predicted map based on the elevation matrix *'predictedCoastline'* and the information matrix *'R'*.
 
-
 #### *predictionTable.m* - Function file: 
 
 - This function's main purpose is to import the prediction data file and extract the data needed for the final function.
@@ -66,7 +65,6 @@ Analysis of Data
      - This is to exclude the notes and explinations in the first few rows of the file.
      - Those notes and explinations are useful for better understanding the file, but pose problems when the file is used.
 2. The function renames the 'year' headers from _"RSL[year]_cm_"_ to just the [year] numbers.
-
 
 #### *elevationDataFunction.m* - Function file: 
 
@@ -85,15 +83,17 @@ Analysis of Data
 - Uses bulit in functions from MATLAB.
 - This file is from the open source MatLab code “terrain-elevation” posted by “spfrommer” on GitHub.
 
-
 #### *fetchregion.m* - Function file: 
 
 - This file is from the open source MatLab code “terrain-elevation” posted by “spfrommer” on GitHub.
 - The function is called in elevationDataFunction.m 
 - The purpose of this function is to find the exact location and data of a given region from the USGS elevation data. In doing so, it calls the rangepars function and uses two for loops to download the zipped files of the specified region, extract the zip file from the area, and then copies the path into a new region array for the raw data. 
 
-#### *ElevationData.m* - Function file: 
+#### *ElevationData.m* - Script file: 
 
+- This script creates the function called 'getCartesian' which converts the latitude and longitude values into cartesian coordinates. 
+- This file is from the open source MatLab code “terrain-elevation” posted by “spfrommer” on GitHub.
+- The cartesion coordinates are set into x and y matrices that line up each element of the elevation for the specific region. 
 
 #### *dispelev.m* - Function file: 
 
