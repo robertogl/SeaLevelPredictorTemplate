@@ -30,7 +30,6 @@ Once the prompts are answered by pressing the enter key, wait for the two figure
 
 - This script's main purpose is to define the function called 'readelevation'. 
 
-
 2. rangeparse.m file: 
 
 - This function's main purpose is to 
@@ -41,7 +40,7 @@ Once the prompts are answered by pressing the enter key, wait for the two figure
 
 4. finalFunction.m file: 
 
-- The final function script is where the three user prompts are set up and stores the user input as three variables named 'wantedRegion', 'wantedYear' and 'wantedScenario'. Then, the script calls the 'predictionTable' function to get the data and stores it in the variable called 'newPTable'. 
+- The final function script is where the three user prompts are set up and stores the user input as three variables named 'wantedRegion', 'wantedYear' and 'wantedScenario'. Then, the script calls the 'predictionTable' function to get the data and stores it in the variable called 'newPTable'. The code then indexes through the newPTable to find the rows that match the wantedYear in the NOAA name column. To do this, one for loop and an if else statement is used. The same for loop and if else statement is used for the wantedScenario variable and goes through to Scenario column instead of the NOAA name column. 
 
 5. fetchregion.m file: 
 
