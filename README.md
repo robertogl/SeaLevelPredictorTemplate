@@ -20,6 +20,6 @@ In addition, since the script pulls the data for the elevation and latitude/long
 
 ### Current State of Project 
 
-Our project is finished to an extent. There is always room for improvement, however, the code in this repository is completed in that it is able to output an original map of a region given by the user with another map of the new predicted coastline of the same region. The maps output in the same format with thw same colore schemes. 
+Our project is finished to an extent. There is always room for improvement, however, the code in this repository is completed in that it is able to output an original map of a region given by the user with another map of the new predicted coastline of the same region. The maps output in the same format with the same color schemes. 
 
 
