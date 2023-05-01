@@ -74,18 +74,21 @@ Analysis of Data
 #### *Region.m* - Function file: 
 
 - This script's main purpose is to define the function called 'readelevation'. 
+- This file is from the open source MatLab code “terrain-elevation” posted by “spfrommer” on GitHub.
+- The function readelevation pulls the elevation from the existing elevation data files in the data server and copies the longitude and latitude values to create a new elevation matrix. 
 
 #### *rangeparse.m* - Function file: 
 
-- This function's main purpose is to 
+- This function's main purpose is to find the latitude and longitude values of the top left corner to cover the given range of the region. 
+- Uses bulit in functions from MATLAB.
+- This file is from the open source MatLab code “terrain-elevation” posted by “spfrommer” on GitHub.
 
 
 #### *fetchregion.m* - Function file: 
 
-- called in elevationDataFunction.m 
-- The purpose of this function is to 
-
-
+- This file is from the open source MatLab code “terrain-elevation” posted by “spfrommer” on GitHub.
+- The function is called in elevationDataFunction.m 
+- The purpose of this function is to find the exact location and data of a given region from the USGS elevation data. In doing so, it calls the rangepars function and uses two for loops to download the zipped files of the specified region, extract the zip file from the area, and then copies the path into a new region array for the raw data. 
 
 #### *ElevationData.m* - Function file: 
 
