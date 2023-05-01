@@ -70,6 +70,8 @@ Analysis of Data
 
 #### *elevationDataFunction.m* - Function file: 
 
+- The main purpose of this function is the display the current elevation data on a map. The output of this function is a figure map of the current elevatoin for the given region that the user inputs. This function calls the fetchregion function to get the raw elevatoin data for the wanted region, and then also calls the readelevation function to get the correct latitude and longitude values in a new matrix. 
+- There is a for loop that fixes the map's color scheme - originally the map showed green where the water was supposed to be and also green where the land was. This for loop sets the elevation equal to 0 for the display and sets any water as negative numbers so that the map registers negative numbers as under sea level turning it a blue color. 
 
 #### *Region.m* - Function file: 
 
