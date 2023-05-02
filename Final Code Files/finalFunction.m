@@ -52,4 +52,4 @@ colorbar
 title("Prediction Data")
 
 % display sea level rise value
-fprintf("The sea level of this region rised %2.4f meters.", seaLevelRise)
+fprintf("The sea level of this region will rise %2.4f meters.", seaLevelRise)
